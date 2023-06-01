@@ -3,6 +3,11 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 
 function PageWrapper({ children }) {
+    const styles = {
+        bgiSignIn: {
+            backgroundImage: `url(${"/src/imagenes/logologin.JPG"})`
+        }
+    };
     return (
         <Box
             sx={{
@@ -13,7 +18,9 @@ function PageWrapper({ children }) {
                 width: '100%', // This makes the box take up the full width of the view
                 pt: 3,
                 pb: 3,
+                backgroundImage: `url(${"/src/imagenes/logologin.JPG"})`
             }}
+            
         >
             <Paper
                 sx={{
@@ -21,6 +28,7 @@ function PageWrapper({ children }) {
                     height: '90%', // This makes the paper take up 80% of the height of its container
                     overflow: 'auto', // This allows the content to scroll if it overflows the height of the paper
                     p: 2,
+                    backgroundImage: `url(${"/src/imagenes/logologin.JPG"})`
                 }}
             >
                 {children}

@@ -23,10 +23,21 @@ function SignIn() {
             console.error('Error signing in with email and password', error);
         }
     };
+    // const styles = {
+    //     bgiSignIn: {
+    //         backgroundImage: `url(${"/src/imagenes/logologin.JPG"})`
+    //     }
+    // };
+    const styles = {
+        bgiSignIn: {
+          backgroundImage: `url(${process.env.PUBLIC_URL}/imagenes/logologin.JPG)`
+        }
+      };
 
     return (
-        <Container maxWidth="sm">
-            <Box
+        <Container maxWidth="sm" style={styles.bgiSignIn}>
+
+            <Box 
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"
