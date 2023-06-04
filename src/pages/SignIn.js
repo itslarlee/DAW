@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useIdentity } from '../providers/IdentityProvider';
+import { BorderAll, BorderStyle } from '@mui/icons-material';
 
 function SignIn() {
     const [email, setEmail] = useState('');
@@ -25,20 +26,33 @@ function SignIn() {
     };
     // const styles = {
     //     bgiSignIn: {
-    //         backgroundImage: `url(${"/src/imagenes/logologin.JPG"})`
+    //       backgroundImage: `url(${process.env.PUBLIC_URL}/imagenes/logologin.JPG)`
     //     }
-    // };
-    const styles = {
-        bgiSignIn: {
-          backgroundImage: `url(${process.env.PUBLIC_URL}/imagenes/logologin.JPG)`
-        }
-      };
+    //   };
+
+    const styles = StyleSheet.create({
+        container: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center'
+    }});
+
 
     return (
-        <Container maxWidth="sm" style={styles.bgiSignIn}>
+        //< div align = "right" style={BorderStyle}>
+        <Container style={styles.Container} maxWidth="sm"
+            
+        >
+            
+            <Box display="block" >
+                <h1>
+                    este debe estar a la derecha
 
+                </h1>
+
+            </Box>
             <Box 
-                display="flex"
+                display="block"
                 flexDirection="column"
                 justifyContent="center"
                 alignItems="center"
@@ -76,7 +90,9 @@ function SignIn() {
                 </Typography>
             </Box>
         </Container>
+        //</div>
     );
+        
 }
 
 export default SignIn;
