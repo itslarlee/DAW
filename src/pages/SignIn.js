@@ -24,70 +24,79 @@ function SignIn() {
             console.error('Error signing in with email and password', error);
         }
     };
-    // const styles = {
-    //     bgiSignIn: {
-    //       backgroundImage: `url(${process.env.PUBLIC_URL}/imagenes/logologin.JPG)`
-    //     }
-    //   };
+    const styles = {
+        bgiSignIn: {
+          backgroundImage: `url(${process.env.PUBLIC_URL}/imagenes/logologin.JPG)`
+        }
+      };
 
-    const styles = StyleSheet.create({
-        container: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'center'
-    }});
-
-
-    return (
-        //< div align = "right" style={BorderStyle}>
-        <Container style={styles.Container} maxWidth="sm"
-            
+      return (
+        <Container 
+        maxWidth="lg"
+       
         >
-            
-            <Box display="block" >
-                <h1>
-                    este debe estar a la derecha
-
-                </h1>
-
-            </Box>
-            <Box 
-                display="block"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                bgcolor="background.paper"
-                p={2}
-                boxShadow={1}
+            <Box
+            display="flex"
+            flexDirection ='row'
+            justifyContent= 'space-evenly'
+            maxWidth = {true}
+           
             >
-                <Typography variant="h4" component="h1" gutterBottom>
-                    Iniciar sesión
-                </Typography>
-                <TextField
-                    label="Correo electrónico"
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <TextField
-                    label="Contraseña"
-                    margin="normal"
-                    variant="outlined"
-                    fullWidth
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <Box mt={2}>
-                    <Button variant="contained" color="primary" onClick={handleSubmit}>
-                        Iniciar sesión
-                    </Button>
+                <Box 
+                    height= '50vh'
+                    width= '100%'
+                    maxWidth= {true}
+                     m={0.5}
+                     >
+                    
+                    <img src= "/imagenes/logologin.JPG"
+                    alt="Logo"
+                    />
+
                 </Box>
-                <Typography variant="body1" align="center">
-                    ¿No tienes una cuenta? <Link to="/signup">Registrarse</Link>
-                </Typography>
+                <Box 
+                  maxWidth = {true}
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    bgcolor="black"
+                    p={2}
+                    boxShadow={1}
+                    height= '50vh'
+                    width='100%' 
+                    ml={5}
+                    mt={15}                 
+                >
+                    <Typography variant="h4" component="h1" gutterBottom>
+                        Iniciar sesión
+                    </Typography>
+                    <TextField
+                        label="Correo electrónico"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <TextField
+                        label="Contraseña"
+                        margin="normal"
+                        variant="outlined"
+                        fullWidth
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <Box mt={2}>
+                        <Button variant="contained" color="primary" onClick={handleSubmit}>
+                            Iniciar sesión
+                        </Button>
+                    </Box>
+                    <Typography variant="body1" align="center">
+                        ¿No tienes una cuenta? <Link to="/signup">Registrarse</Link>
+                    </Typography>
+                </Box>
             </Box>
         </Container>
         //</div>

@@ -1,3 +1,4 @@
 .fondo{
     backgroundImage: url(${process.env.PUBLIC_URL}/imagenes/logologin.JPG)
 }
+
